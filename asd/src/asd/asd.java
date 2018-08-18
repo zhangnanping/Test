@@ -7,13 +7,14 @@ public class asd extends Thread{
 	static int tick=20;
 	static Object ob="aa";
 	public void run(){
+	syso("你是一个大傻逼");
 		while(tick>=0){
 			synchronized(ob){
 				if(tick>0){
-					System.out.println(getName()+"�����˵�"+tick+"��Ʊ");
+					System.out.println(getName()+"Âô³öÁËµÚ"+tick+"ÕÅÆ±");
 					tick--;
 				}else{
-					System.out.println("Ʊ������");
+					System.out.println("Æ±ÂôÍêÁË");
 					return;
 				}
 			}
