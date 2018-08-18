@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+	namespace=""  命名空间，防止所有的包名不能重复
+	值的规则：接口的完全包名.接口名
+ -->
+<mapper namespace="dao.Jiekou">
+	<!-- 查询用户记录数 -->
+	<select id="verifyUser" resultType="entity.User" parameterType="entity.User">
+		select * from smbms_user where userCode=#{userCode} and userPassword=#{userPassword}
+	</select>
+	<select id="selectAll" resultType="entity.User" parameterType="int">
+		select * from smbms_user limit #{qishi},5
+	</select>
+<!-- 	<select id="select" resultType="entity.Kh">
+		select * from kh where day>'2010-12-12'
+	</select> -->
+	<select id="chaxun" resultType="entity.Role">
+		select * from smbms_role
+	</select>
+	<select id="chaxunUser" resultType="entity.User" parameterType="String">
+		select * from smbms_user where userCode=#{string}
+	</select>
+	<insert id="addUser" parameterType="entity.User">
+		insert into smbms_user(userCode,userName,userPassword,gender,birthday,phone,address,userRole,createdBy,creationDate) 
+		values(#{userCode},#{userName},#{userPassword},#{gender},#{birthday},
+		#{phone},#{address},#{userRole},#{createdBy},#{creationDate})
+	</insert>
+	<select id="chaxunById" resultType="entity.User" parameterType="int">
+		select * from smbms_user where id=#{id}
+	</select>
+	<update id="xiugai" parameterType="entity.User">
+		UPDATE smbms_user set userName=#{userName},gender=#{gender},birthday=#{birthday},phone=#{phone},address=#{address},userRole=#{userRole},modifyBy=#{modifyBy},modifyDate=#{modifyDate}  WHERE id=#{id}
+	</update>
+	<select id="moHu" resultType="entity.User" parameterType="map">
+		select * from smbms_user where userName like concat('%',#{userName},'%')and userRole like concat('%',#{userRole},'%') limit #{qishiye},5
+	</select>
+	<select id="findCount" resultType="int">
+		select count(*) from smbms_user
+	</select>
+		<select id="moHu1" resultType="int" parameterType="map">
+		select count(*) from smbms_user where userName like concat('%',#{userName},'%')and userRole like concat('%',#{userRole},'%')
+	</select>
+	<delete id="shanChu">
+		delete from smbms_user where id in
+		<foreach collection="array" item="ids" open="(" close=")" separator=",">
+			#{ids}
+		</foreach>
+	</delete>
+</mapper>
+
+
+
+
+
+
+
