@@ -11,56 +11,56 @@ import entity.User;
 
 public interface Jiekou {
 	/**
-	 * µÇÂ½ÑéÖ¤
-	 * @param user²âÊÔ²âÊÔ²âÊÔ
-	 * @return
+	 * ç™»é™†éªŒè¯
+	 * @param useræµ‹è¯•æµ‹è¯•æµ‹è¯•
+	 * @returnå†æ¥ä¸€æ¬¡æµ‹è¯•
 	 */
 	public User verifyUser(User user);
 	
 	/**
-	 * ²éÑ¯ËùÓĞÓÃ»§
+	 * æŸ¥è¯¢æ‰€æœ‰ç”¨æˆ·
 	 */
 	public List<User> selectAll(int qishi);
 	
 	/**
-	 * ¿Îºó
+	 * è¯¾å
 	 */
 	public List<Kh> select();
 	
 	/**
-	 * ÏÂÀ­ÁĞ±í²éÑ¯½ÇÉ«Ãû
+	 * ä¸‹æ‹‰åˆ—è¡¨æŸ¥è¯¢è§’è‰²å
 	 * @return
 	 */
 	public List<Role> chaxun();
 	
 	/**
-	 * ²éÑ¯ÓÃ»§±àÂëÊÇ·ñ´æÔÚ
+	 * æŸ¥è¯¢ç”¨æˆ·ç¼–ç æ˜¯å¦å­˜åœ¨
 	 */
 	public User chaxunUser(String string);
 	
 	/**
-	 * Ìí¼ÓÓÃ»§
+	 * æ·»åŠ ç”¨æˆ·
 	 * @param user
 	 * @return
 	 */
 	public int addUser(User user);
 	
 	/**
-	 * Í¨¹ıid²éÑ¯ÓÃ»§
+	 * é€šè¿‡idæŸ¥è¯¢ç”¨æˆ·
 	 */
 	public User chaxunById(int id);
 	/**
-	 * ĞŞ¸ÄÓÃ»§
+	 * ä¿®æ”¹ç”¨æˆ·
 	 * 
 	 */
 	public int xiugai(User user);
 	
 	/**
-	 * Ä£ºı²éÑ¯
+	 * æ¨¡ç³ŠæŸ¥è¯¢
 	 */
 	public List<User> moHu(Map<String, Object> map);
 	/**
-	 * ²éÑ¯ÓÃ»§×ÜÊı
+	 * æŸ¥è¯¢ç”¨æˆ·æ€»æ•°
 	 */
 	public int findCount();
 	public int moHu1(Map<String, Object> map);
