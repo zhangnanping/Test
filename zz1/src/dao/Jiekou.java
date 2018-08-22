@@ -12,7 +12,7 @@ import entity.User;
 public interface Jiekou {
 	/**
 	 * µÇÂ½ÑéÖ¤
-	 * @param user
+	 * @param user²âÊÔ²âÊÔ²âÊÔ
 	 * @return
 	 */
 	public User verifyUser(User user);
